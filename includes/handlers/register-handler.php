@@ -44,7 +44,7 @@ if(isset($_POST['registerButton'])) {
 		if($userType==1){
 			header("Location: audienceindex.php");
 		}else{
-			header("Location: artistindex.php");
+			header("Location: artistIndex.php");
 		}
 	}
 

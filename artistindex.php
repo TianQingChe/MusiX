@@ -1,25 +1,5 @@
-<?php
-
-include("includes/config.php");
-
-//session_destroy();
-
-if(isset($_SESSION['userLoggedIn'])){
-	$userLoggedIn=$_SESSION['userLoggedIn'];
-}
-else{
-	header("Location: register.php");
-}
-
+<?php 
+include("includes/artistIncludedFiles.php"); 
 ?>
 
-<html>
-<head>
-	<title>Welcome to MusiX!</title>
-</head>
-
-<body>
-	Atist!
-</body>
-
-</html>
+<script>openPage("artistBrowse.php")</script>

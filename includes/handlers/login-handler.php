@@ -9,10 +9,13 @@ if(isset($_POST['loginButton'])) {
 	
 	if($result!=-1){
 		$_SESSION['userLoggedIn']=$username;
+		$_SESSION['userId']=$account->getUserId($username);
 		if($result==1){
 			header("Location: audienceindex.php");
+		}else if($result==1){
+			header("Location: artistIndex.php");
 		}else{
-			header("Location: artistindex.php");
+			header("Location: admin.php");
 		}
 	}
 }

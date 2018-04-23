@@ -70,18 +70,37 @@ body {
     vertical-align: middle;
 }
 
+#trackplayOptions{
+    background-color: transparent;
+    border: none;
+    vertical-align: middle;
+}
+
+#trackplayOptions img{
+    width: 20px;
+    height: 20px;
+}
+
 .controlButton img {
     width: 20px;
     height: 20px;
 }
 
 .controlButton.play img,
-.controlButton.pause img {
+.controlButton.pause img{
     width: 32px;
     height: 32px;
 }
 
 .controlButton:hover {
+    cursor: pointer;
+}
+
+.d1,.d2,.d3{
+    display: inline;
+}
+
+#songPlay:hover{
     cursor: pointer;
 }
 
@@ -139,9 +158,17 @@ body {
     width: 100%;
 }
 
-#nowPlayingLeft .trackInfo .artistName span {
+#nowPlayingLeft .trackInfo .artistName span{
     font-size: 12px;
     color: #a0a0a0;
+}
+
+#aName{
+    font-size: 12px;
+    color: #a0a0a0;
+}
+#aName,#tName{
+    text-decoration:none;
 }
 
 .volumeBar {
@@ -241,6 +268,20 @@ body {
     width: 100%;
 }
 
+.followViewItem {
+    display: inline-block;
+    margin-right: 20px;
+    width: 29%;
+/*    max-width: 200px;
+    min-width: 150px;*/
+    margin-bottom: 20px;
+}
+
+.followViewItem img {
+    width: 100%;
+    height: 50%; 
+}
+
 .gridViewInfo {
     font-weight: 300;
     text-align: center;
@@ -279,6 +320,16 @@ body {
 
 .entityInfo .rightSection h2 {
     margin-top: 0px;
+}
+
+.controlButton .unlove .user button,img{
+    display:inline-block;
+    text-align:center;
+}
+
+.controlButton .love .user button,img{
+    display:inline-block;
+    text-align:center;
 }
 
 .entityInfo .rightSection p {
@@ -449,6 +500,10 @@ input:focus {
 
 .playlistsContainer {
     padding: 10px 0;
+}
+
+.followingImage{
+    padding: 10px;
 }
 
 

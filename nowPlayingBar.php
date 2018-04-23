@@ -9,10 +9,10 @@
 
 				<div class="trackInfo">
 					<span class="trackName">
-						<span>Cool</span>
+						<span></span>
 					</span>
 					<span class="artistName">
-						<span>Ya</span>
+						<span></span>
 					</span>
 				</div>
 			</div>

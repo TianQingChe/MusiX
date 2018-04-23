@@ -24,11 +24,16 @@
 			$this->genre = $this->mysqliData['genre'];
 			$this->duration = $this->mysqliData['duration'];
 			$this->path = $this->mysqliData['path'];
-			$this->language = $this->mysqliData['langugae'];
+			$this->language = $this->mysqliData['language'];
+			$this->plays=$this->mysqliData['plays'];
 		}
 
 		public function getTitle() {
 			return $this->title;
+		}
+
+		public function getPlays(){
+			return $this->plays;
 		}
 
 		public function getId() {
@@ -40,7 +45,7 @@
 		}
 
 		public function getCover() {
-			return new Album($this->con, $this->albumId);
+			return $this->cover;
 		}
 
 		public function getPath() {
@@ -56,11 +61,17 @@
 		}
 
 		public function getGenre() {
-			return $this->genre;
+			$query = mysqli_query($this->con, "SELECT `name` FROM genres WHERE id='$this->genre'");
+			$data = mysqli_fetch_array($query);
+			$lan=$data['name'];
+			return $lan;
 		}
 
 		public function getLanguage() {
-			return $this->language;
+			$query = mysqli_query($this->con, "SELECT `name` FROM languages WHERE id='$this->language'");
+			$data = mysqli_fetch_array($query);
+			$lan=$data['name'];
+			return $lan;
 		}
 
 	}

@@ -10,7 +10,7 @@
 		}
 
 		public function login($un,$pw){
-			$pw=md5($pw);
+			// $pw=md5($pw);
 			$query=mysqli_query($this->con,"SELECT userType FROM users WHERE username='$un' AND password='$pw'");
 			if(mysqli_num_rows($query)==1){
 				$result=mysqli_fetch_row($query);
@@ -19,6 +19,12 @@
 				array_push($this->errorArray,Constants::$loginFailed);
 				return -1;
 			}
+		}
+
+		public function getUserId($un){
+			$query=mysqli_query($this->con,"SELECT id FROM users WHERE username='$un'");
+			$result=mysqli_fetch_row($query);
+			return $result[0];
 		}
 
 
@@ -47,19 +53,20 @@
 		}
 
 		private function insertUserDetails($un, $fn, $ln, $em, $pw,$userType) {
-			$encryptedPw = md5($pw);
+			// $encryptedPw = md5($pw);
 			$profilePic = "assets/images/profile-pics/head_emerald.png";
 			$date = date("Y-m-d");
+			$name=$fn." ".$ln;
 
-			$result = mysqli_query($this->con, "INSERT INTO users VALUES ('', '$un', '$encryptedPw','$userType','$fn', '$ln', '$em', '$date', '$profilePic')");
-
+			$result = mysqli_query($this->con, "INSERT INTO users VALUES ('', '$un', '$pw','$userType','$fn', '$ln', '$em', '$date', '$profilePic','$name')");
+			echo "";
 			return $result;
 		}
 
 
 		private function validateUsername($un) {
 
-			if(strlen($un) > 25 || strlen($un) < 5) {
+			if(strlen($un) > 25 || strlen($un) < 3) {
 				array_push($this->errorArray, Constants::$usernameCharacters);
 				return;
 			}
@@ -116,7 +123,7 @@
 				return;
 			}
 
-			if(strlen($pw) > 30 || strlen($pw) < 5) {
+			if(strlen($pw) > 30 || strlen($pw) < 3) {
 				array_push($this->errorArray, Constants::$passwordCharacters);
 				return;
 			}
