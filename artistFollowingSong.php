@@ -68,7 +68,7 @@ include("includes/artistIncludedFiles.php");
 						  . $follwer->getTitle() . "</span>
 						</div>
 						<div class='trackDuration'>
-							<button class='controlButton unlove likeSong ".$i."' id='saveSongId" .$i. "'aId='".$follwer->getId()."' title='Unlove button' onclick='likeSong(".$i.")'>
+							<button class='controlButton unlove likeSong ".$i."' id='saveSongId" .$i. "' aId='".$follwer->getId()."' title='Unlove button' onclick='likeSong(".$i.")'>
 							<img src='assets/images/icons/unlove.png' alt='Cancel Love'>
 							</button>
 							<button class='controlButton love likeSong ".$i."' title='Love button' style='display: none;' onclick='unLikeSong(".$i.")'>

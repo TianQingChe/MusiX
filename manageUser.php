@@ -26,7 +26,7 @@ function deleteUser(event){
 	var td=$(event.currentTarget);
 	var userId=td.attr("id");
 	$.post("includes/handlers/ajax/deleteUser.php",{userId:userId});
-	findAllUsers();
+	// findAllUsers();
 }
 function modifyUser(event){
 	var td=$(event.currentTarget);
@@ -38,9 +38,12 @@ function modifyUser(event){
 	var email=$("#email"+i).val();
 	var email2=$("#email"+i).val();
 	var password=$("#password"+i).val();
-	var userType=$("#userType"+i).val();
+	var password2=$("#password"+i).val();
+	var userType=$("#userType"+i+" option:selected").val();
+	console.log(userId);
+	console.log(userType);
 	$.post("includes/handlers/ajax/updateUser.php",{userId:userId,username:username,firstName:firstName,lastName:lastName,email:email,email2:email2,password:password,password2:password2,userType:userType});
-	findAllUsers();
+	// findAllUsers();
 }
 function renderUsers(users){
 			var tbody=$("tbody");

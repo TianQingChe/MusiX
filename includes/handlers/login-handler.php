@@ -12,7 +12,7 @@ if(isset($_POST['loginButton'])) {
 		$_SESSION['userId']=$account->getUserId($username);
 		if($result==1){
 			header("Location: audienceindex.php");
-		}else if($result==1){
+		}else if($result==2){
 			header("Location: artistIndex.php");
 		}else{
 			header("Location: admin.php");

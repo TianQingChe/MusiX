@@ -1,6 +1,6 @@
 <?php 
 $con = mysqli_connect("cs5200-spring2018-yu.ctgkaydbplwu.us-east-2.rds.amazonaws.com", "yangfan", "Ok*64818503", "music",3306);
-echo "IN";
+
 if(isset($_POST['songButton'])) {
 	//Register button was pressed
 	// $con= $_POST['con'];
